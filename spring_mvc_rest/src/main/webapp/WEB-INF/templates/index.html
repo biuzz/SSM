@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<h1>index.html</h1>
+<a th:href="@{/user}">查询所有用户信息</a><br>
+<a th:href="@{/user/1}">查询id为1的用户信息</a><br>
+<form th:action="@{/user}" method="post">
+    <input type="submit" value="添加用户信息">
+</form>
+<form th:action="@{/user}" method="post">
+    <input type="hidden" name="_method" value="put">
+    <input type="submit" value="修改用户信息">
+</form>
+
+<form th:action="@{/user/1}" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="删除用户信息">
+</form>
+<hr>
+<a th:href="@{/employee}">查询所有的员工信息</a><br>
+<a th:href="@{/employee/1001}">查询id为1001的员工信息</a><br>
+<form th:action="@{/employee}" method="post">
+<!--    id:<input type="text" name="id"><br>-->
+    用户名：<input type="text" name="lastName"><br>
+    邮箱：<input type="text" name="email"><br>
+    性别：<input type="text"name="gender"><br>
+    <input type="submit"value="提交">
+</form>
+
+<form th:action="@{/employee}" method="post">
+    <input type="hidden" name="_method" value="put">
+    id:<input type="text" name="id"><br>
+    用户名：<input type="text" name="lastName"><br>
+    邮箱：<input type="text" name="email"><br>
+    性别：<input type="text"name="gender"><br>
+    <input type="submit"value="提交">
+</form>
+
+<form th:action="@{/employee}" method="post">
+    <input type="hidden" name="_method" value="delete">
+    id:<input type="text" name="id">
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>
