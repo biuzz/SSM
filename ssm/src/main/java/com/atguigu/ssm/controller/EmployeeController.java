@@ -41,6 +41,7 @@ public class EmployeeController {
     //删除员工信息-->/employee/1-->delete
     @RequestMapping(value = "/employee/{id}/{pageNum}",method = RequestMethod.DELETE)
     public String deleteEmployeeById(@PathVariable("id") Integer id, @PathVariable("pageNum") Integer pageNum ){
+        System.out.println("删除员工");
         employeeService.deleteEmployeeById(id);
         return "redirect:/employee/page"+"/"+pageNum;
     }
