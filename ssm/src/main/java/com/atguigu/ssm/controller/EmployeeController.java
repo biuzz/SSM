@@ -74,6 +74,7 @@ public class EmployeeController {
     @RequestMapping(value = "/employee/{pages}",method = RequestMethod.POST)
     public String insertEmployee(Employee employee,@PathVariable("pages" )Integer pages){
         System.out.println("添加员工操作！");
+        System.out.println(1);
         System.out.println("2");
         employeeService.insertEmployee(employee);
         return "redirect:/employee/page/"+pages;
